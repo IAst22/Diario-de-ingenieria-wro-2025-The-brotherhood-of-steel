@@ -1,0 +1,95 @@
+a = 0
+b = 0
+
+def on_forever():
+    neZha.set_motor_speed(neZha.MotorList.M1, -50)
+    if a==1:
+        if PlanetX_Basic.ultrasound_sensor(PlanetX_Basic.DigitalRJPin.J1,
+                PlanetX_Basic.Distance_Unit_List.DISTANCE_UNIT_CM) < 25 and PlanetX_Basic.ultrasound_sensor(PlanetX_Basic.DigitalRJPin.J1,
+                PlanetX_Basic.Distance_Unit_List.DISTANCE_UNIT_CM) >= 5:
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 100)
+                basic.pause(3000)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                basic.pause(3000)
+                PlanetX_AILens.camera_image()
+        if PlanetX_AILens.color_check(PlanetX_AILens.ColorLs.RED):
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+                basic.pause(1500)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+                basic.pause(750)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+                basic.pause(1500)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                basic.pause(1500)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+                basic.pause(1500)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+                basic.pause(750)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                basic.pause(3000)
+        if PlanetX_AILens.color_check(PlanetX_AILens.ColorLs.GREEN):
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+                basic.pause(1500)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+                basic.pause(750)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                basic.pause(1500)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+                basic.pause(1500)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+                basic.pause(1500)
+                neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                basic.pause(3000)
+        pass
+    if b==1:
+            if PlanetX_Basic.ultrasound_sensor(PlanetX_Basic.DigitalRJPin.J1,
+                        PlanetX_Basic.Distance_Unit_List.DISTANCE_UNIT_CM) < 25 and PlanetX_Basic.ultrasound_sensor(PlanetX_Basic.DigitalRJPin.J1,
+                        PlanetX_Basic.Distance_Unit_List.DISTANCE_UNIT_CM) >= 5:
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 280)
+                        basic.pause(3000)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                        basic.pause(3000)
+                        PlanetX_AILens.camera_image()
+            if PlanetX_AILens.color_check(PlanetX_AILens.ColorLs.RED):
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+                        basic.pause(1500)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+                        basic.pause(750)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+                        basic.pause(1500)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                        basic.pause(1500)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+                        basic.pause(1500)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+                        basic.pause(750)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                        basic.pause(3000)
+            if PlanetX_AILens.color_check(PlanetX_AILens.ColorLs.GREEN):
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+                        basic.pause(1500)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+                        basic.pause(750)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                        basic.pause(1500)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+                        basic.pause(1500)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+                        basic.pause(1500)
+                        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+                        basic.pause(3000)
+            pass
+pass
+basic.forever(on_forever)
+
+def on_button_pressed_a():
+    a=1
+
+input.on_button_pressed(Button.A, on_button_pressed_a)
+def on_button_pressed_b():
+    b=1
+
+input.on_button_pressed(Button.A, on_button_pressed_a)
+PlanetX_AILens.init_module()
+neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+PlanetX_AILens.switchfunc(PlanetX_AILens.FuncList.CARD)
