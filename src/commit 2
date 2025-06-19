@@ -1,0 +1,44 @@
+PlanetX_AILens.init_module()
+PlanetX_AILens.switchfunc(PlanetX_AILens.FuncList.COLOR)
+PlanetX_AILens.camera_image()
+neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+def on_forever():
+    neZha.set_motor_speed(neZha.MotorList.M1, -30)
+    if PlanetX_Basic.ultrasound_sensor(PlanetX_Basic.DigitalRJPin.J1,
+        PlanetX_Basic.Distance_Unit_List.DISTANCE_UNIT_CM) < 20 and PlanetX_Basic.ultrasound_sensor(PlanetX_Basic.DigitalRJPin.J1,
+        PlanetX_Basic.Distance_Unit_List.DISTANCE_UNIT_CM) >= 5:
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+        basic.pause(3000)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+        basic.pause(3000)
+    if PlanetX_AILens.color_check(PlanetX_AILens.ColorLs.RED):
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+        basic.pause(1500)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+        basic.pause(750)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+        basic.pause(1500)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+        basic.pause(1500)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+        basic.pause(1500)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+        basic.pause(750)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+        basic.pause(3000)
+        pass
+    if PlanetX_AILens.color_check(PlanetX_AILens.ColorLs.GREEN):
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+        basic.pause(1500)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+        basic.pause(750)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+        basic.pause(1500)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 125)
+        basic.pause(1500)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 240)
+        basic.pause(1500)
+        neZha.set_servo_angel(neZha.ServoTypeList._360, neZha.ServoList.S1, 180)
+        basic.pause(3000)
+        pass
+basic.forever(on_forever)
