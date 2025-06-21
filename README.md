@@ -77,3 +77,6 @@ AI camera: Detects objects or obstacles on the road and is conditioned to that i
 Ultrasonic sensors: Send sound signals that bounce off objects and return to the sensor, allowing it to detect the distance to said object. This emulates the echolocation system of bats.
 
 
+Process for building, compiling, and uploading the code to the vehicle controllers
+
+The code we used for our model was built on the microbit website, in an environment that uses Python as the programming language. Once the code is designed, it is downloaded to the computer and then transferred to the Micro:bit board, connected to the computer via a data transfer cable with USB/microUSB connectors. This board is then inserted into the Nezha expansion board slot, which is responsible for executing the code and compiling the data from the vehicle components.
