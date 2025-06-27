@@ -71,7 +71,9 @@ Operating Voltage: The Nezha breakout board V2 has a maximum operating voltage o
 ![batery nheza](https://github.com/user-attachments/assets/8ea9b1cd-e281-46eb-8538-0eb31927bee5)
 
 
+
 Sensor system: 
+
 
 Ultrasonic sensors
 Our model has 3 ultrasonic sensors on the front of the vehicle, one is arranged to see straight ahead and the other two are arranged at each corner of the front of the vehicle, diagonally, allowing the car to have a 180-degree view forward, thus emulating the vision that a driver of any vehicle without rearview mirrors would have. 
@@ -95,6 +97,8 @@ Others: Resistant to sunlight and black objects, although soft materials may hin
 ![image](https://github.com/user-attachments/assets/bd67bc18-7205-4451-b744-63509dfda577)
 
 
+
+
 Color sensor
 Additionally, We use a color sensor Model EF05006, part of the Planet X sensor series, too. This color sensor based on the TCS3200 chip, enabling it to detect and identify colors. This sensor filters RGB data from light sources and converts it into a square wave frequency that's proportional to the light intensity. By analyzing the ratios of red, green, and blue light, the sensor can determine the color of an object. 
 
@@ -110,6 +114,8 @@ The sensor receives light from an object.
 It filters the light into red, green, and blue components.
 Each color component is converted into a frequency signal.
 The micro:bit reads these frequencies and calculates the color based on the ratios of red, green, and blue.
+
+
 
 Smart AI Lens camera
 Finally, our robot has a Smart AI Lens camera model EF05045, programmed to recognize the colors red, green, and magenta, so it can recognize them and turn right or left according to the rules or park. This AI Smart Lens camera is equipped with a remarkable 90-degree ultra-wide angle lens, providing an expansive field of view.
