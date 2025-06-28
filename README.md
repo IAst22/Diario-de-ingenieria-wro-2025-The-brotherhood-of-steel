@@ -115,6 +115,9 @@ It filters the light into red, green, and blue components.
 Each color component is converted into a frequency signal.
 The micro:bit reads these frequencies and calculates the color based on the ratios of red, green, and blue.
 
+![Untitled](https://github.com/user-attachments/assets/1070aa13-36ad-4a3d-8174-7158571ed60b)
+
+
 
 
 Smart AI Lens camera
